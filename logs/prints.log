@@ -1,0 +1,3 @@
+13:35:13.144 [TestNG-tests-1] DEBUG tests.RegisterUser - Account Deleted
+13:35:14.478 [TestNG-tests-1] DEBUG tests.RegisterUser - Closed the account delete page
+13:35:14.594 [TestNG-tests-1] DEBUG tests.RegisterUser - Session ended
