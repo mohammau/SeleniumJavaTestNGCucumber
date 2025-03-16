@@ -7,25 +7,29 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LandingPage {
 	
-	WebDriver driver ;
+	WebDriver driver;
 	
 	public LandingPage(WebDriver driver) {
 		
-		this.driver = driver ;
+		this.driver = driver;
 		
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath = "//a[@href='/' and contains(text(),'Home')]")
+	private WebElement homePage ;
 	
+	@FindBy(xpath = "//a[@href='/login']")
+	private WebElement loginCTA ;
 	
-	@FindBy(xpath = "//a[@href=\"/login\"]")
-	private WebElement loginSignUp ;
-	
-	
-	public WebElement loginSignUP() {
+	public WebElement homePage() {
 		
-		return loginSignUp ;
+		return homePage;
 	}
 	
+	public WebElement loginCTA() {
+		
+		return loginCTA;
+	}
 
 }

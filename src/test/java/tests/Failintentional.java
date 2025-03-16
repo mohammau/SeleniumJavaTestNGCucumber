@@ -8,6 +8,9 @@ import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 
 import resources.Base;
 
@@ -33,6 +36,7 @@ public class Failintentional extends Base {
 	}
 	
 
+	
 	@AfterMethod
 	public void tearDown() {
 		

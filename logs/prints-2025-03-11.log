@@ -1,7 +1,0 @@
-17:00:52.459 [TestNG-tests-1] DEBUG tests.RegisterUser - Mobile number entered
-17:00:53.816 [TestNG-tests-1] DEBUG tests.RegisterUser - Create account cta clicked
-17:00:53.829 [TestNG-tests-1] DEBUG tests.RegisterUser - Account created text is displayed
-17:00:55.558 [TestNG-tests-1] DEBUG tests.RegisterUser - Clicked on continue
-17:00:55.571 [TestNG-tests-1] DEBUG tests.RegisterUser - Logged in as Mohammad ummar
-17:00:56.501 [TestNG-tests-1] DEBUG tests.RegisterUser - Account Deleted
-17:00:58.019 [TestNG-tests-1] DEBUG tests.RegisterUser - Closed the account delete page

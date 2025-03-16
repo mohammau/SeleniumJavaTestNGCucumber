@@ -9,55 +9,54 @@ import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+
 import com.aventstack.extentreports.Status;
-
 import resources.Base;
-import utilities.ExtentReporter;
+import utilities.extentReport;
 
-public class Listeners extends Base implements ITestListener {
+public class Listeners extends Base implements ITestListener{
 	
-	 ExtentReports extentReport = ExtentReporter.getExtentReport();
-	 ExtentTest extentTest;
-	 ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<ExtentTest>();
-
+	ExtentReports extentR = extentReport.getExtentReport() ;
+	ExtentTest extentTest ;
+	ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<ExtentTest>();
+	
 	@Override
 	public void onTestStart(ITestResult result) {
-	
-		extentTest = extentReport.createTest(result.getName());
+		
+		 extentTest = extentR.createTest(result.getName());
 		 extentTestThread.set(extentTest);
 	}
-
+	
 	@Override
 	public void onTestSuccess(ITestResult result) {
-	
-		//extentTest.log(Status.PASS, "Test Passed");
+		
+		// extentTest.log(Status.PASS, "Test Passed");
 		extentTestThread.get().log(Status.PASS, "Test Passed");
+	
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		
-		// extentTest.fail(result.getThrowable());
+	//	extentTest.fail(result.getThrowable());
 		extentTestThread.get().fail(result.getThrowable());
-		
-		WebDriver driver = null;
 		
 		String testMethodName = result.getName();
 		
-		
-			try {
-				driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
-			} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
+		WebDriver driver = null;
+		try {
+			driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		try {
-			String screenshotPath = takeScreenshot(testMethodName,driver);
-			extentTestThread.get().addScreenCaptureFromPath(screenshotPath, screenshotPath);
+		String screenshotFilePath = screenshotCapture(testMethodName, driver);
+		extentTestThread.get().addScreenCaptureFromPath(screenshotFilePath, testMethodName);
+		
 		} catch (IOException e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	
@@ -65,17 +64,17 @@ public class Listeners extends Base implements ITestListener {
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-	
+
 	}
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		
+	
 	}
 
 	@Override
 	public void onTestFailedWithTimeout(ITestResult result) {
-	
+
 	}
 
 	@Override
@@ -86,8 +85,10 @@ public class Listeners extends Base implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		
-		extentReport.flush();
-		
+		extentR.flush();
+
 	}
+	
+	
 
 }

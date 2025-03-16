@@ -1,79 +1,80 @@
 package resources;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+
+
 public class Base {
 	
-	public WebDriver driver;
+	public WebDriver driver ;
 	public Properties prop ;
 	
-	public WebDriver initializeDriver() throws IOException {
+	
+	public WebDriver initializeDriver() throws IOException {				
+				
+		prop = new Properties();
 		
-	prop = new Properties();
 	
-	String propPath = System.getProperty("user.dir") + "//src//main//java//resources//data.properties";
-	
-	FileInputStream fis = new FileInputStream(propPath);
-	
-	prop.load(fis);
+		String propPath = System.getProperty("user.dir") + "//src//main//java//resources//data.properties";
+		FileInputStream FIS = new FileInputStream(propPath);
 		
-	String browser = prop.getProperty("BROWSER");
-	
-	if(browser.equalsIgnoreCase("chrome")) {
+		prop.load(FIS);
 		
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		String Browser = prop.getProperty("Browser");
 		
-	}
-	
-	if(browser.equalsIgnoreCase("Firefox")) {
+		if(Browser == null) {
+			
+			throw new RuntimeException("BROWSER property is not set in data.properties");
+		}
 		
-		WebDriverManager.firefoxdriver().setup();
-		driver = new FirefoxDriver();
+		switch(Browser.toLowerCase()) {
+		case "chrome":
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+			break ;
+		case "edge":
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+			break;
+		case "firefox":
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			break;
+		default:
+			throw new IllegalArgumentException("Invalid browser name = " + Browser);
+		}
 		
-	}
-	
-	
-	if(browser.equalsIgnoreCase("edge")) {
-		
-		WebDriverManager.edgedriver().setup();
-		driver = new EdgeDriver();
-		
-	}
-	
-	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	
-	return driver;
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		return driver;
 
 	}
 	
-	public String takeScreenshot(String testName, WebDriver driver) throws IOException {
+	public String screenshotCapture(String testName, WebDriver driver) throws IOException {
 		
-	    
-		
-		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		
-		String destinationFilePath = System.getProperty("user.dir")+ "//screenshots//"+testName+".png";
-		
-		FileUtils.copyFile(source, new File(destinationFilePath));
-		
-		return destinationFilePath;
-		
-		
+	File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	String destinationFilePath = System.getProperty("user.dir") + "//screenshots//"+testName+".png";
+	FileUtils.copyFile(source, new File(destinationFilePath));
+	
+	return destinationFilePath ;
+	
 	}
+	
+	
+	
 
 }

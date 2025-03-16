@@ -1,7 +1,0 @@
-pageObjects/LandingPage.class
-pageObjects/PopUpMessages.class
-pageObjects/AccountDeletedPage.class
-pageObjects/RegisteredUserPage.class
-pageObjects/RegistrationPage.class
-resources/Base.class
-pageObjects/SignInRegistorPage.class

@@ -7,11 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PopUpMessages {
 	
-	WebDriver driver ;
-	
+	WebDriver driver;
 	public PopUpMessages(WebDriver driver) {
 		
-		this.driver = driver ;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -23,4 +22,5 @@ public class PopUpMessages {
 		
 		return popUpMessage ;
 	}
+
 }

@@ -1,7 +1,0 @@
-12:49:33.607 [TestNG-tests-1] DEBUG tests.RegisterUser - Zipcode entered
-12:49:33.629 [TestNG-tests-1] DEBUG tests.RegisterUser - Mobile number entered
-12:49:33.658 [TestNG-tests-1] DEBUG tests.RegisterUser - Create account cta clicked
-12:49:34.860 [TestNG-tests-1] DEBUG tests.RegisterUser - Account created text is displayed
-12:49:35.844 [TestNG-tests-1] DEBUG tests.RegisterUser - Clicked on continue
-12:49:35.855 [TestNG-tests-1] DEBUG tests.RegisterUser - Logged in as Mohammad ummar
-12:49:36.746 [TestNG-tests-1] DEBUG tests.RegisterUser - Account Deleted
