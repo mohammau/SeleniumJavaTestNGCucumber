@@ -41,6 +41,15 @@ public class LoginSignUpPage {
 	
 	@FindBy(xpath = "//p[text()='Email Address already exist!']")
 	private WebElement emailExistText;
+	
+	@FindBy(xpath="//h2[text()='Login to your account']")
+	private WebElement signinHeader ;
+	
+	public WebElement signinHeader() {
+		
+		return signinHeader ;
+	}
+	
 
 	
 	public WebElement textHeaderLogin() {

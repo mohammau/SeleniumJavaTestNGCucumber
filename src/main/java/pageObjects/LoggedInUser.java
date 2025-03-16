@@ -20,6 +20,15 @@ public class LoggedInUser {
 	
 	@FindBy(xpath = "//a[@href = '/logout']")
 	private WebElement logoutButton;
+	
+	@FindBy(xpath="//a[@href=\"/delete_account\"]")
+	private WebElement DeleteAccountCTA ;
+	
+		
+	public WebElement DeleteAccountCTA() {
+		
+		return DeleteAccountCTA;
+	}
 
 	public WebElement LoggedInUserText() {
 		

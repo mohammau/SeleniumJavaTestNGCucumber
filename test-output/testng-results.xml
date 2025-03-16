@@ -1,47 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="3" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-16T09:22:05 GMT" name="Default suite" finished-at="2025-03-16T09:22:19 GMT" duration-ms="13595">
+  <suite started-at="2025-03-16T12:36:18 GMT" name="Suite" finished-at="2025-03-16T12:37:18 GMT" duration-ms="59778">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.Runner@41d477ed]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-03-16T09:22:05 GMT" name="Default test" finished-at="2025-03-16T09:22:19 GMT" duration-ms="13595">
-      <class name="runner.Runner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.Runner@41d477ed]" started-at="2025-03-16T09:22:05 GMT" name="setUpClass" finished-at="2025-03-16T09:22:05 GMT" duration-ms="100" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@2d746ce4]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2025-03-16T12:36:18 GMT" name="Test" finished-at="2025-03-16T12:37:18 GMT" duration-ms="59778">
+      <class name="tests.Failintentional">
+        <test-method signature="failedTest()[pri:0, instance:tests.Failintentional@7494f96a]" started-at="2025-03-16T12:37:11 GMT" name="failedTest" finished-at="2025-03-16T12:37:14 GMT" duration-ms="2981" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
+at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
+at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
+at tests.Failintentional.failedTest(Failintentional.java:38)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.Runner@41d477ed]" started-at="2025-03-16T09:22:05 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-03-16T09:22:19 GMT" duration-ms="13479" status="PASS">
+        </test-method> <!-- failedTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Failintentional@7494f96a]" started-at="2025-03-16T12:37:14 GMT" name="tearDown" finished-at="2025-03-16T12:37:14 GMT" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.Failintentional -->
+      <class name="tests.LogoutUser">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LogoutUser@247bddad]" started-at="2025-03-16T12:36:18 GMT" name="setUp" finished-at="2025-03-16T12:36:24 GMT" duration-ms="5399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="logout()[pri:0, instance:tests.LogoutUser@247bddad]" started-at="2025-03-16T12:36:24 GMT" name="logout" finished-at="2025-03-16T12:36:29 GMT" duration-ms="5434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LogoutUser@247bddad]" started-at="2025-03-16T12:36:29 GMT" name="tearDown" finished-at="2025-03-16T12:36:29 GMT" duration-ms="116" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LogoutUser -->
+      <class name="tests.RegisterUserFresh">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.RegisterUserFresh@561b6512]" started-at="2025-03-16T12:37:14 GMT" name="setUp" finished-at="2025-03-16T12:37:17 GMT" duration-ms="3017" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="userRegister()[pri:0, instance:tests.RegisterUserFresh@561b6512]" started-at="2025-03-16T12:37:17 GMT" name="userRegister" finished-at="2025-03-16T12:37:18 GMT" duration-ms="1324" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Keys to send should be a not null CharSequence]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy13.sendKeys(Unknown Source)
+at tests.RegisterUserFresh.userRegister(RegisterUserFresh.java:65)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.RegisterUserFresh@561b6512]" started-at="2025-03-16T12:37:18 GMT" name="tearDown" finished-at="2025-03-16T12:37:18 GMT" duration-ms="93" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.RegisterUserFresh -->
+      <class name="tests.LoginUser">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginUser@26b3fd41]" started-at="2025-03-16T12:36:35 GMT" name="setUp" finished-at="2025-03-16T12:36:38 GMT" duration-ms="3107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginUser@26b3fd41]" started-at="2025-03-16T12:36:38 GMT" name="Login" data-provider="loginData" finished-at="2025-03-16T12:36:53 GMT" duration-ms="14107" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Login user able to successfully logout of the application"]]>
+                <![CDATA[test77@9690.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Register and login functionality"]]>
+                <![CDATA[Ummar@1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Success]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected:<Success> but was:<Failure>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected:<Success> but was:<Failure>
+at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:115)
+at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:125)
+at tests.LoginUser.Login(LoginUser.java:90)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1575)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginUser@26b3fd41]" started-at="2025-03-16T12:36:53 GMT" name="tearDown" finished-at="2025-03-16T12:36:53 GMT" duration-ms="71" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginUser@26b3fd41]" started-at="2025-03-16T12:36:53 GMT" name="setUp" finished-at="2025-03-16T12:36:56 GMT" duration-ms="3712" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Login(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.LoginUser@26b3fd41]" started-at="2025-03-16T12:36:56 GMT" name="Login" data-provider="loginData" finished-at="2025-03-16T12:37:10 GMT" duration-ms="14179" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test77@9690.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Umar123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Failure]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.Runner@41d477ed]" started-at="2025-03-16T09:22:19 GMT" name="tearDownClass" finished-at="2025-03-16T09:22:19 GMT" duration-ms="2" status="PASS">
+        </test-method> <!-- Login -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginUser@26b3fd41]" started-at="2025-03-16T12:37:10 GMT" name="tearDown" finished-at="2025-03-16T12:37:11 GMT" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- runner.Runner -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginUser -->
+      <class name="tests.RegisterUserExistingEmail">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.RegisterUserExistingEmail@192c3f1e]" started-at="2025-03-16T12:36:29 GMT" name="setUp" finished-at="2025-03-16T12:36:32 GMT" duration-ms="2322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="existingEmailRegister()[pri:0, instance:tests.RegisterUserExistingEmail@192c3f1e]" started-at="2025-03-16T12:36:32 GMT" name="existingEmailRegister" finished-at="2025-03-16T12:36:35 GMT" duration-ms="3578" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- existingEmailRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.RegisterUserExistingEmail@192c3f1e]" started-at="2025-03-16T12:36:35 GMT" name="tearDown" finished-at="2025-03-16T12:36:35 GMT" duration-ms="88" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.RegisterUserExistingEmail -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
